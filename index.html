@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en" class="default-style">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <title>Exam Results - Department of Examinations - Sri Lanka</title>
+  <meta name="description" content="Department of Examinations Sri Lanka - Exam Results">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="doenets-lk-examresults-full-site-offline/www.doenets.lk/favicon.ico">
+
+  <!-- Main font -->
+  <link href="doenets-lk-examresults-full-site-offline/fonts.googleapis.com/css/family=Roboto_300,300i,400,400i,500,500i,700,700i,900.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/vendor/fonts/fontawesome.css">
+  <link rel="stylesheet" href="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/vendor/fonts/ionicons.css">
+  <link rel="stylesheet" href="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/css/animate.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="doenets-lk-examresults-full-site-offline/www.doenets.lk/styles.85ae39be287006094234.css">
+
+  <style>
+    /* Sticky Maroon Navbar */
+    .navbar-sticky-maroon {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      background-color: #800000 !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+      z-index: 1050 !important;
+      padding-top: 0.35rem !important;
+      padding-bottom: 0.35rem !important;
+      transition: background-color 0.2s ease;
+    }
+    .navbar-sticky-maroon .pageBanner {
+      display: none !important;
+    }
+    .navbar-sticky-maroon .nav-link,
+    .navbar-sticky-maroon .nav-link span,
+    .navbar-sticky-maroon .nav-link strong,
+    .navbar-sticky-maroon .text-dark {
+      color: #ffffff !important;
+    }
+    .navbar-sticky-maroon .btn-outline-primary {
+      border-color: #ffffff !important;
+      color: #ffffff !important;
+      background-color: transparent !important;
+    }
+    .navbar-sticky-maroon .btn-outline-primary strong {
+      color: #ffffff !important;
+    }
+    .navbar-sticky-maroon .navbar-search-box input {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      color: #333 !important;
+    }
+
+    /* Warning boxes */
+    .warning {
+      border: 10px ridge #de3030;
+      background-color: #ebeb27;
+      padding: .5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .warning p {
+      font: small-caps bold .85rem sans-serif;
+      text-align: center;
+      margin-bottom: 0.4rem;
+      color: #000;
+    }
+
+    /* hCaptcha Widget Container */
+    .hcaptcha-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 302px;
+      height: 76px;
+      background-color: #fafafa;
+      border: 1px solid #d3d3d3;
+      border-radius: 4px;
+      padding: 0 12px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+      user-select: none;
+      position: relative;
+    }
+    .hcaptcha-checkbox-wrap {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .hcaptcha-checkbox {
+      width: 26px;
+      height: 26px;
+      background-color: #ffffff;
+      border: 2px solid #c1c1c1;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.15s ease;
+      position: relative;
+    }
+    .hcaptcha-checkbox:hover {
+      border-color: #999999;
+    }
+    .hcaptcha-label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #222222;
+      margin-left: 12px;
+    }
+    .hcaptcha-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+    }
+    .hcaptcha-brand svg {
+      width: 32px;
+      height: 32px;
+    }
+    .hcaptcha-brand-text {
+      font-size: 10px;
+      font-weight: 700;
+      color: #555555;
+      margin-top: 1px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .hcaptcha-legal {
+      font-size: 8px;
+      color: #888888;
+      margin-top: 1px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .hcaptcha-spinner {
+      width: 18px;
+      height: 18px;
+      border: 3px solid #00a2cc;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: hcap-spin 0.8s linear infinite;
+    }
+    @keyframes hcap-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Result Card Watermark */
+    .watermark-card {
+      background-color: #ffffff;
+      border: 1px solid #17a2b8;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .watermark-card::before { display: none !important; }
+    .watermark-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Ball Pulse Spinner */
+    .ball-pulse-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(51, 51, 51, 0.7);
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ball-pulse-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .ball-pulse-dots > div {
+      width: 16px;
+      height: 16px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      animation: ball-pulse-scale 0.75s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+    }
+    .ball-pulse-dots > div:nth-child(1) { animation-delay: -0.36s; }
+    .ball-pulse-dots > div:nth-child(2) { animation-delay: -0.24s; }
+    .ball-pulse-dots > div:nth-child(3) { animation-delay: -0.12s; }
+    @keyframes ball-pulse-scale {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+      40% { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* Toast Notification */
+    #toast-container {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999999;
+      display: none;
+      min-width: 300px;
+      max-width: 90%;
+    }
+    .toast-box {
+      background-color: #d9534f;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .toast-close {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      margin-left: 15px;
+      line-height: 1;
+    }
+
+    /* Scroll To Top Button */
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 9999;
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+    #scrollToTopBtn:hover {
+      transform: translateY(-3px);
+    }
+    #scrollToTopBtn img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Print styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #resultCard, #resultCard * {
+        visibility: visible;
+      }
+      #resultCard {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      .result-close {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* Exact Result Card Styling matching official screenshot */
+    #resultCard.card.border-info {
+      border: 1px solid #a1e5ed !important;
+      background-color: #ffffff !important;
+      border-radius: 4px !important;
+      box-shadow: none !important;
+      padding: 10px 15px 25px 15px !important;
+    }
+    .result-close {
+      color: #3ac0d2 !important;
+      cursor: pointer;
+      font-size: 1.3rem;
+      font-weight: 300;
+      transition: opacity 0.15s ease;
+    }
+    .result-close:hover {
+      opacity: 0.7;
+    }
+    #studentInfoBox p {
+      margin-bottom: 0.65rem;
+      font-size: 0.85rem;
+      color: #212529;
+    }
+    #studentInfoBox p strong {
+      font-weight: 600;
+      color: #212529;
+    }
+    #subjectResultsBox p {
+      margin-bottom: 0.65rem;
+      font-size: 0.85rem;
+      color: #212529;
+    }
+    .badge-default {
+      background-color: #e9ecef !important;
+      color: #495057 !important;
+      font-weight: 600 !important;
+      font-size: 0.8rem !important;
+      padding: 4px 10px !important;
+      border-radius: 4px !important;
+      min-width: 28px !important;
+      display: inline-block !important;
+      text-align: center !important;
+    }
+  </style>
+  
+  <style>
+    /* Mobile-Specific Responsive Styling matching user screenshots */
+    @media (max-width: 576px) {
+      .pageBanner {
+        background-image: url('doenets-lk-examresults-full-site-offline/www.doenets.lk/images/client/BannerMobile.jpg') !important;
+        height: 5.5rem !important;
+        width: 100% !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+      }
+      .search-submit-btn {
+        width: 80% !important;
+        max-width: 280px !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 0.5rem !important;
+      }
+      .bottom-actions-row {
+        justify-content: center !important;
+        display: flex !important;
+        width: 100% !important;
+      }
+      .bottom-actions-row > * {
+        margin: 0 4px !important;
+      }
+      #resultCard.card.border-info {
+        padding: 15px 10px 20px 10px !important;
+      }
+    }
+
+    /* Mobile Result Card Center Alignment (matching media_1794545308205_6b6616a1.png) */
+    @media (max-width: 767.98px) {
+      #studentInfoBox,
+      #subjectResultsBox {
+        text-align: center !important;
+      }
+      #studentInfoBox .row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 0.65rem !important;
+      }
+      #studentInfoBox .col-md-4,
+      #studentInfoBox .col-md-8,
+      #studentInfoBox .col-sm-4,
+      #studentInfoBox .col-sm-8,
+      #studentInfoBox .col-xs-4,
+      #studentInfoBox .col-xs-8 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        text-align: center !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+      }
+      #studentInfoBox p {
+        text-align: center !important;
+        margin-bottom: 0.15rem !important;
+        font-size: 0.85rem !important;
+      }
+      #studentInfoBox p strong {
+        display: block !important;
+        text-align: center !important;
+        margin-bottom: 0.15rem !important;
+        color: #212529 !important;
+      }
+      
+      #subjectResultsBox .row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 0.85rem !important;
+      }
+      #subjectResultsBox .col-md-8,
+      #subjectResultsBox .col-md-4,
+      #subjectResultsBox .col-sm-8,
+      #subjectResultsBox .col-sm-4,
+      #subjectResultsBox .col-xs-8,
+      #subjectResultsBox .col-xs-4 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        text-align: center !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      #subjectResultsBox p {
+        text-align: center !important;
+        margin-bottom: 0.2rem !important;
+      }
+      #subjectResultsBox .badge-default {
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.4rem !important;
+        display: inline-block !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* Fixed Mobile Navbar Collapse - prevents expanded links from showing by default */
+    @media (max-width: 991.98px) {
+      #navCollapse:not(.show) {
+        display: none !important;
+      }
+      #navCollapse.show {
+        display: block !important;
+        background-color: #ffffff;
+        padding: 10px 15px;
+        border-top: 1px solid #e9ecef;
+      }
+      .navbar-sticky-maroon {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 48px !important;
+        min-height: 48px !important;
+        background-color: #800000 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+        z-index: 1050 !important;
+        padding: 4px 12px !important;
+      }
+      .navbar-sticky-maroon .pageBanner {
+        display: none !important;
+      }
+      .navbar-sticky-maroon #navCollapse:not(.show) {
+        display: none !important;
+      }
+      .navbar-sticky-maroon #navCollapse.show {
+        position: absolute !important;
+        top: 48px !important;
+        left: 0 !important;
+        right: 0 !important;
+        background-color: #800000 !important;
+        padding: 10px 20px !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+      }
+      .navbar-sticky-maroon #togglerIcon,
+      .navbar-sticky-maroon .navbar-toggler i {
+        color: #ffffff !important;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #navCollapse {
+        display: flex !important;
+      }
+    }
+  </style>
+  
+<style>
+.pageBanner {
+  background-image: url('images/client/Banner_XXL_Monitor.jpg'), url('doenets-lk-examresults-full-site-offline/www.doenets.lk/images/client/Banner_XXL_Monitor.jpg') !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  height: 13rem !important;
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+@media only screen and (min-width: 1824px) {
+  .pageBanner {
+    background-image: url('images/client/BannerXl.jpg'), url('doenets-lk-examresults-full-site-offline/www.doenets.lk/images/client/BannerXl.jpg') !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    height: 13rem !important;
+    width: 95% !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .pageBanner {
+    background-image: url('images/client/BannerMobile.jpg'), url('doenets-lk-examresults-full-site-offline/www.doenets.lk/images/client/BannerMobile.jpg') !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    height: 5.5rem !important;
+    width: 100% !important;
+  }
+}
+.watermark-card::before { display: none !important; }
+</style>
+</head>
+<body class="">
+
+  <!-- App root -->
+  <div class="layout-wrapper layout-1 layout-without-sidenav">
+    <div class="layout-inner">
+
+      <!-- Navigation Bar -->
+      <nav id="mainNavbar" class="navbar navbar-expand-lg align-items-lg-center container-p-x bg-navbar-theme animated fadeIn">
+        <div class="col-12 fade-out-custom">
+          
+          <!-- Top Banner -->
+          <div class="row d-flex justify-content-center">
+            <div class="col-12 pageBanner" style="position: relative;">
+              <a href="javascript:void(0)">
+                <div class="col-12 bannerLink"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="row mr-2">
+            <button id="navbarTogglerBtn" class="navbar-toggler border-0" type="button">
+              <i id="togglerIcon" class="fas fa-bars text-dark"></i>
+            </button>
+            <div class="navbar-nav align-items-lg-center ml-auto d-lg-none d-md-block d-sm-block d-xs-block"></div>
+          </div>
+
+          <div id="navCollapse" class="navbar-collapse collapse">
+            <hr class="d-lg-none w-100 my-2">
+
+            <!-- Nav Links -->
+            <div class="navbar-nav align-items-lg-center">
+              <a class="nav-link d-none d-lg-block" href="javascript:void(0)">
+                <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                  <span class="px-1 mr-lg-2 ml-2 ml-lg-0 text-dark"><strong>Home</strong></span>
+                </span>
+              </a>
+
+              <a class="nav-link d-none d-lg-block" href="index.html">
+                <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle text-dark">
+                  <span class="px-1 mr-lg-2 ml-2 ml-lg-0"><strong>School Exam Results</strong></span>
+                </span>
+              </a>
+
+              <a class="nav-link d-none d-lg-block" href="javascript:void(0)">
+                <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle text-dark">
+                  <span class="px-1 mr-lg-2 ml-2 ml-lg-0"><strong>Exam Calendar</strong></span>
+                </span>
+              </a>
+
+              <a class="nav-link d-none d-lg-block" href="https://certificate.doenets.lk/" target="_blank" rel="noopener noreferrer">
+                <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle text-dark">
+                  <span class="px-1 mr-lg-2 ml-2 ml-lg-0"><strong>Certificates / Verification of Results</strong></span>
+                </span>
+              </a>
+
+              <a class="nav-link" href="javascript:void(0)">
+                <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle text-dark">
+                  <span class="px-1 mr-lg-2 ml-2 ml-lg-0"><strong>Contact Us</strong></span>
+                </span>
+              </a>
+            </div>
+
+            <!-- Right Controls: Search & Language Switcher -->
+            <div class="navbar-nav align-items-lg-center ml-auto">
+              <label class="nav-item navbar-text navbar-search-box p-0 active">
+                <i class="ion ion-ios-search navbar-icon align-middle text-secondary"></i>
+                <input class="form-control-sm ml-3 w-75 border border-light" id="typeahead-format" type="text" placeholder="Search" autocomplete="off">
+                <span class="navbar-search-input pl-2"></span>
+              </label>
+
+              <!-- Language: Sinhala -->
+              <div class="demo-navbar-user nav-item show dropdown">
+                <a id="langSiBtn" class="nav-link" href="javascript:void(0)" style="cursor: pointer;">
+                  <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                    <span class="px-1 ml-lg-0 d-xs-none text-dark"><strong>සිංහල</strong></span>
+                  </span>
+                </a>
+              </div>
+
+              <!-- Language: Tamil -->
+              <div class="demo-navbar-user nav-item show dropdown">
+                <a id="langTaBtn" class="nav-link" href="javascript:void(0)" style="cursor: pointer;">
+                  <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                    <span class="px-1 ml-lg-0 d-xs-none text-dark"><strong>தமிழ்</strong></span>
+                  </span>
+                </a>
+              </div>
+
+              <!-- Language: English (Active Pill) -->
+              <div class="demo-navbar-user nav-item show dropdown">
+                <a id="langEnBtn" class="nav-link btn btn-xs btn-outline-primary text-primary text-left" href="javascript:void(0)" style="cursor: pointer;">
+                  <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                    <span class="px-1 ml-lg-0 d-xs-none text-dark"><strong>English</strong></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content Container -->
+      <div class="layout-container">
+        <div class="layout-content">
+          <div class="container-fluid router-transitions flex-grow-1 container-p-y">
+            
+            <div class="pt-2 mx-0">
+              <div class="card mt-2 mx-0 px-0" style="background: #d8d8d8;">
+                <div class="card-body">
+                  
+                  <!-- Title -->
+                  <div class="row mb-2">
+                    <div class="col-md-12">
+                      <p class="h4 text-center mb-4"><span>FIND YOUR EXAM RESULTS HERE</span>&nbsp;</p>
+                    </div>
+                  </div>
+
+                  <!-- Warning Notice 1 -->
+                  <div class="warning">
+                    <p>විභාග ප්‍රතිඵල ශ්‍රී ලංකා රජය සතු දේපලක් වන අතර, නිසි අවසරයකින් තොරව අයදුම්කරුගේ නොවන ප්‍රතිඵල උපුටා ගැනීම, ළඟ තබා ගැනීම, වෙබ් අඩවියක හෝ සමාජ මාධ්‍ය ජාලවල පල කිරීම හෝ වෙනත් ආකාරයකින් ප්‍රසිද්ධ කිරීම සපුරා තහනම් වන අතර, දඬුවම් ලැබිය හැකි වරදකි. </p>
+                    <p>Examination results are the property of the Government of Sri Lanka, and copying, keeping, posting on a website or social media networks or otherwise publicizing the results which are not belong to the candidate without proper permission is strictly prohibited and is a punishable offence.</p>
+                    <p>பரீட்சைப் பெறுபேறுகள் இலங்கை அரசாங்கத்தின் சொத்தாகும். உரிய அனுமதியின்றி பரீட்சார்த்திகளுக்கு உரியதல்லாத பெறுபேறுகளை பிரதிசெய்தல், தம்வசம் வைத்திருத்தல், இணையத்தளமொன்றிற்குள்ளோ அல்லது சமூக வலைத்தளங்களிலோ பதிவேற்றம் செய்தல் அல்லது வேறு வடிவங்களில் பிரசுரித்தல் என்பன முற்றாகத் தடைசெய்யப்பட்டுள்ளதுடன் தண்டனைக்குரிய குற்றமுமாகும்.</p>
+                  </div>
+                  <br>
+
+                  <!-- Warning Notice 2 -->
+                  <div class="warning">
+                    <p>ඔබගේ සහතිකපත්‍රය මාර්ගගතව ලබා ගැනීම සඳහා 
+                      <code style="text-transform:none !important; font-variant:normal !important; font-size:16px; color:#635e5e;">www.doenets.lk</code> 
+                      ඔස්සේ විභාග දෙපාර්තමේන්තු නිල වෙබ් අඩවිය වෙත ගොස් "Online Certificate (G.C.E (O/L) and G.C.E (A/L))" වෙත පිවිසෙන්න.
+                    </p>
+                    <p>To obtain your certificate online, kindly visit the official website of the Department of Examinations via 
+                      <code style="text-transform:none !important; font-variant:normal !important; font-size:16px; color:#635e5e;">www.doenets.lk</code> 
+                      and then click on "Online Certificate (G.C.E. (O/L) and G.C.E. (A/L))".
+                    </p>
+                    <p>உங்கள் பரீட்சைச் சான்றிதழை நிகழ்நிலையில் பெற்றுக்கொள்ள 
+                      <code style="text-transform:none !important; font-variant:normal !important; font-size:16px; color:#635e5e;">www.doenets.lk</code> 
+                      ஊடாக இலங்கைப் பரීட்சைத் திணைக்களத்தின் உத்தியோகபூர்வ இணையத்தளமான "Online Certificate (G.C.E. (O/L) and G.C.E. (A/L))" இற்குப் பிரவேசிக்கவும்.
+                    </p>
+                  </div>
+                  <br>
+
+                  <!-- Form Controls Row -->
+                  <div class="row">
+                    
+                    <!-- Left: Exam & Year -->
+                    <div class="offset-lg-1 col-lg-5 col-md-12 col-sm-12 mb-3">
+                      <div class="row">
+                        <!-- Exam Dropdown -->
+                        <div class="col-7">
+                          <div class="input-group" style="display: -webkit-box;">
+                            <select id="examSelect" class="form-control flex-grow-1 h5" style="white-space:normal">
+                              <option disabled selected value="default">Select the Exam</option>
+                              <option value="al">G.C.E.(A/L) EXAMINATION</option>
+                              <option value="al_2026">G.C.E.(A/L) EXAMINATION-(2026)</option>
+                              <option value="ol">G.C.E. (O/L) EXAMINATION(After Rescrutiny)</option>
+                              <option value="sc">Grade 5 Scholarship Examination-(After Appeals)</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- Year Dropdown -->
+                        <div class="col-5">
+                          <div class="input-group" style="display: -webkit-box;">
+                            <select id="yearSelect" class="form-control flex-grow-1 h5" style="white-space:normal" disabled>
+                              <option disabled selected value="default">Select the year</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right: Search Type & Index Input -->
+                    <div class="col-lg-5 col-md-12">
+                      <div class="row mb-1">
+                        <div class="input-group px-1">
+                          <select id="searchTypeSelect" class="custom-option form-control col-md-3" disabled>
+                            <option value="index" selected>Index </option>
+                            <option value="nic">NIC </option>
+                          </select>
+                          <input id="examIndexNo" class="form-control text-center" name="examIndexNo" type="text" placeholder="Search By ..." disabled autocomplete="off">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- hCaptcha Challenge Widget -->
+                  <div class="row mt-3">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                      <div class="h-captcha" style="display: inline-block;">
+                        <div class="hcaptcha-box" id="hcaptchaBox">
+                          <div class="hcaptcha-checkbox-wrap" id="hcaptchaWrap">
+                            <div class="hcaptcha-checkbox" id="hcaptchaCheckbox"></div>
+                            <span class="hcaptcha-label">I am human</span>
+                          </div>
+                          <div class="hcaptcha-brand">
+                            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                              <path fill="#00a2cc" d="M125,50 L375,50 L475,250 L375,450 L125,450 L25,250 Z" />
+                              <circle cx="250" cy="180" r="60" fill="#ffffff" />
+                              <circle cx="170" cy="310" r="45" fill="#ffffff" />
+                              <circle cx="330" cy="310" r="45" fill="#ffffff" />
+                            </svg>
+                            <span class="hcaptcha-brand-text">hCaptcha</span>
+                            <span class="hcaptcha-legal">Privacy - Terms</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons: Submit & Reset -->
+                  <div class="row mt-3">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                      <button id="submitBtn" class="btn submit-btn search-submit-btn mb-1" type="button"><strong>Submit</strong></button>
+                      <button id="resetBtn" class="btn reset-btn search-submit-btn mb-1" type="button"><strong>Reset</strong></button>
+                    </div>
+                  </div>
+
+                  <!-- Dynamic Result Card -->
+                  <div class="row mt-4" id="resultContainer" style="display: none;">
+                    <div class="col-md-12">
+                      <div id="resultCard" class="card border-info">
+                        
+                        <!-- Header with Close Icon -->
+                        <div class="row mt-1">
+                          <div class="col-md-12 mb-2 pr-4 mt-2">
+                            <i id="closeResultBtn" class="ion ion-md-close result-close float-right" style="font-size: 1.3rem;"></i>
+                            <p class="text-center h5">
+                              <span id="resExamTitle">G.C.E. (A/L) EXAMINATION</span>&nbsp;
+                              <a class="badge badge-pill badge-dark text-white" id="resYearBadge">2025</a>
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Result Details: Student Info & Subjects -->
+                        <div class="row pb-4">
+                          <div class="col-md-1"></div>
+                          
+                          <!-- Student Info Column -->
+                          <div class="col-md-6 col-sm-12 col-xs-12" id="studentInfoBox">
+                            <!-- Populated dynamically via JS -->
+                          </div>
+
+                          <!-- Subject Results Column -->
+                          <div class="col-md-5 col-sm-12 col-xs-12" id="subjectResultsBox">
+                            <!-- Populated dynamically via JS -->
+                          </div>
+                          
+                          <div class="col-md-1"></div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Print & Other Exam Results Buttons -->
+            <div class="mt-3 row">
+              <div class="offset-sm-10 col-sm-2 offset-xs-4 col-xs-6 d-flex justify-content-end bottom-actions-row">
+                <button id="printBtn" class="btn btn-outline-success" type="button" disabled>Print</button>&nbsp;&nbsp;
+                <a class="btn btn-outline-primary text-primary" href="http://www.results.exams.gov.lk/" rel="noopener noreferrer" target="_blank">Other Examination Results</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Footer -->
+          <footer class="layout-footer">
+            <nav class="myFooter">
+              <div class="container">
+                <div class="row">
+                  
+                  <!-- Emblem -->
+                  <div class="offset-md-1 col-12 col-md-2 mt-5 mb-3 text-center">
+                    <img src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/SL-Logo.png" alt="Sri Lanka Emblem" style="width:7rem; height:auto; filter: drop-shadow(0px 0px 3px white)">
+                  </div>
+
+                  <!-- Contact Us -->
+                  <div class="col-12 col-md-5 mt-5 mb-3">
+                    <h4>Contact Us</h4>
+                    <ul class="list-unstyled quick-links">
+                      <li>
+                        <div class="row pt-3"><i class="fa fa-map-marker-alt col-1"></i> <span class="text-white col-10">Department of Examinations Sri Lanka , Pelawatta, Battaramulla, Sri Lanka.</span></div>
+                      </li>
+                      <li>
+                        <div class="row pt-2"><i class="fa fa-envelope-open col-1"></i><span class="col-10 text-white">E-Mail : exams@doenets.lk</span></div>
+                      </li>
+                      <li>
+                        <div class="row pt-2"><i class="fa fa-tty col-1"></i><span class="col-10 text-white">Hotline : 1911</span></div>
+                      </li>
+                      <li>
+                        <div class="row pt-2"><i class="fa fa-phone col-1"></i><span class="col-10 text-white">Telephone Number : +94 11 2786200, +94 11 2784203-4</span></div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Quick Links Column 1 -->
+                  <div class="col-6 col-md-2 mt-5 mb-3">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled quick-links">
+                      <li><a class="footer-link pt-3 text-white" href="index.html">School Exam Results</a></li>
+                      <li><a class="footer-link pt-4 text-white" href="javascript:void(0)">Exam Calendar</a></li>
+                      <li><a class="footer-link pt-4 text-white" href="javascript:void(0)">Services</a></li>
+                    </ul>
+                  </div>
+
+                  <!-- Quick Links Column 2 -->
+                  <div class="col-6 col-md-2 mt-5 mb-3">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled quick-links text-white">
+                      <li><a class="footer-link pt-3 text-white" href="javascript:void(0)">Downloads</a></li>
+                      <li><a class="footer-link pt-4 text-white" href="javascript:void(0)">Gallery</a></li>
+                      <li><a class="footer-link pt-4 text-white" href="javascript:void(0)">Contact Us</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Partner Logos -->
+              <div class="col-12 mt-1 mb-1">
+                <div class="col-10 offset-1">
+                  <hr style="background: rgb(93, 93, 93)">
+                </div>
+
+                <div class="d-none d-lg-block">
+                  <div class="row mt-2 d-flex align-items-end justify-content-center">
+                    
+                    <div class="col-md-6 d-flex justify-content-center">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-7 col-12 px-0 d-flex justify-content-end">
+                            <h5 class="my-0">Developed By</h5>
+                          </div>
+                          <div class="col-md-5 col-12 d-flex align-items-end px-0">
+                            <a href="http://www.inovaitsys.com" rel="noopener noreferrer" target="_blank">
+                              <img class="text-center pl-2" src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/inovaLogo.png" alt="Inova" style="width:5rem;">
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-5 d-flex justify-content-center">
+                      <div class="row d-flex align-items-end">
+                        <div class="col-md-5 col-12 px-0 d-flex justify-content-end">
+                          <h5 class="my-0">Powered By</h5>
+                        </div>
+                        <div class="col-md-4 col-6 d-flex align-items-end">
+                          <a href="https://www.dialog.lk/" rel="noopener noreferrer" target="_blank">
+                            <img class="text-center pl-2" src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/dialog-logo.png" alt="Dialog" style="width:5rem;">
+                          </a>
+                        </div>
+                        <div class="col-md-3 col-6 d-flex align-items-end">
+                          <img class="text-center pl-2" src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/Headstart Logo.png" alt="Headstart" style="width:6rem;">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="d-block d-lg-none">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-5 d-flex justify-content-center">
+                        <h5 class="my-0">Developed By</h5>
+                      </div>
+                      <div class="col-7 d-flex justify-content-center">
+                        <h5 class="my-0">Powered By</h5>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-5 d-flex align-items-end justify-content-center">
+                        <a href="http://www.inovaitsys.com" rel="noopener noreferrer" target="_blank">
+                          <img class="text-center pl-2" src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/inovaLogo.png" alt="Inova" style="width:5rem;">
+                        </a>
+                      </div>
+                      <div class="col-7 d-flex align-items-end justify-content-center">
+                        <a href="https://www.dialog.lk/" rel="noopener noreferrer" target="_blank">
+                          <img class="text-center pl-2" src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/dialog-logo.png" alt="Dialog" style="width:5rem;">
+                        </a>
+                        <img class="text-center pl-2" src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/Headstart Logo.png" alt="Headstart" style="width:6rem;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Copyright -->
+              <div class="row mt-3 d-flex justify-content-center text-center">
+                <div class="col-12">
+                  <p class="h6">Copyright © 2022 - Department of Examinations, Sri Lanka. All Rights Reserved</p>
+                </div>
+              </div>
+
+            </nav>
+          </footer>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container">
+    <div class="toast-box">
+      <span id="toastMessage">Please fill in all required fields</span>
+      <span class="toast-close" id="toastCloseBtn">&times;</span>
+    </div>
+  </div>
+
+  <!-- Loading Spinner Overlay -->
+  <div id="ballPulseOverlay" class="ball-pulse-overlay" style="display: none;">
+    <div class="ball-pulse-dots">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- Floating Scroll To Top Button -->
+  <div id="scrollToTopBtn">
+    <img src="doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/scroll_top.png" alt="Scroll to Top">
+  </div>
+
+  <!-- Client-side Interactive Controller Script -->
+    <script>
+    (function() {
+      // Elements
+      var navbar = document.getElementById('mainNavbar');
+      var examSelect = document.getElementById('examSelect');
+      var yearSelect = document.getElementById('yearSelect');
+      var searchTypeSelect = document.getElementById('searchTypeSelect');
+      var examIndexNo = document.getElementById('examIndexNo');
+      var hcaptchaBox = document.getElementById('hcaptchaBox');
+      var hcaptchaWrap = document.getElementById('hcaptchaWrap');
+      var hcaptchaCheckbox = document.getElementById('hcaptchaCheckbox');
+      var submitBtn = document.getElementById('submitBtn');
+      var resetBtn = document.getElementById('resetBtn');
+      var printBtn = document.getElementById('printBtn');
+      var resultContainer = document.getElementById('resultContainer');
+      var closeResultBtn = document.getElementById('closeResultBtn');
+      var resExamTitle = document.getElementById('resExamTitle');
+      var resYearBadge = document.getElementById('resYearBadge');
+      var studentInfoBox = document.getElementById('studentInfoBox');
+      var subjectResultsBox = document.getElementById('subjectResultsBox');
+      var toastContainer = document.getElementById('toast-container');
+      var toastMessage = document.getElementById('toastMessage');
+      var toastCloseBtn = document.getElementById('toastCloseBtn');
+      var ballPulseOverlay = document.getElementById('ballPulseOverlay');
+      var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+      var langSiBtn = document.getElementById('langSiBtn');
+      var langTaBtn = document.getElementById('langTaBtn');
+      var langEnBtn = document.getElementById('langEnBtn');
+
+      var isCaptchaVerified = false;
+      var isCaptchaPending = false;
+      var toastTimeout = null;
+
+      // Toast notification helper
+      function showToast(msg) {
+        toastMessage.textContent = msg;
+        toastContainer.style.display = 'block';
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(function() {
+          toastContainer.style.display = 'none';
+        }, 3200);
+      }
+
+      toastCloseBtn.addEventListener('click', function() {
+        toastContainer.style.display = 'none';
+      });
+
+      // Sticky Navbar on Scroll
+      window.addEventListener('scroll', function() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollY > 120) {
+          navbar.classList.add('navbar-sticky-maroon');
+        } else {
+          navbar.classList.remove('navbar-sticky-maroon');
+        }
+
+        if (scrollY > 180) {
+          scrollToTopBtn.style.display = 'block';
+        } else {
+          scrollToTopBtn.style.display = 'none';
+        }
+      });
+
+      // Scroll to Top
+      scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Exam and Year configurations
+      var yearsByExam = {
+        al: ['2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018'],
+        al_2026: ['2026'],
+        ol: ['2025', '2024', '2023', '2022', '2021', '2020'],
+        sc: ['2025', '2024', '2023', '2022']
+      };
+
+      var placeholdersByExam = {
+        al: 'Enter Your AL index',
+        al_2026: 'Enter Your AL index',
+        ol: 'Enter Your OL index',
+        sc: 'Enter Your Scholarship index'
+      };
+
+      function updateInputPlaceholder() {
+        var selectedExam = examSelect.value;
+        var searchType = searchTypeSelect.value;
+        if (!selectedExam || selectedExam === 'default') {
+          examIndexNo.placeholder = 'Search By ...';
+          return;
+        }
+        if (searchType === 'nic') {
+          examIndexNo.placeholder = 'Enter Your NIC';
+        } else {
+          examIndexNo.placeholder = placeholdersByExam[selectedExam] || 'Enter your index';
+        }
+      }
+
+      examSelect.addEventListener('change', function() {
+        var selectedExam = examSelect.value;
+        if (selectedExam && selectedExam !== 'default') {
+          // Enable Year Select
+          yearSelect.disabled = false;
+          yearSelect.innerHTML = '<option disabled selected value="default">Select the year</option>';
+          var years = yearsByExam[selectedExam] || ['2025'];
+          years.forEach(function(yr) {
+            var opt = document.createElement('option');
+            opt.value = yr;
+            opt.textContent = yr;
+            yearSelect.appendChild(opt);
+          });
+
+          // Enable Search Type & Index/NIC Input
+          searchTypeSelect.disabled = false;
+          examIndexNo.disabled = false;
+          updateInputPlaceholder();
+        } else {
+          resetFormToDefault();
+        }
+      });
+
+      searchTypeSelect.addEventListener('change', function() {
+        updateInputPlaceholder();
+        examIndexNo.focus();
+      });
+
+      // Captcha click simulation
+      hcaptchaWrap.addEventListener('click', function() {
+        if (isCaptchaVerified || isCaptchaPending) return;
+
+        isCaptchaPending = true;
+        hcaptchaCheckbox.innerHTML = '<div class="hcaptcha-spinner"></div>';
+
+        setTimeout(function() {
+          isCaptchaPending = false;
+          isCaptchaVerified = true;
+          hcaptchaCheckbox.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#00a859" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+          hcaptchaCheckbox.style.borderColor = '#00a859';
+        }, 500);
+      });
+
+      // Submit Handler
+      submitBtn.addEventListener('click', function() {
+        if (!examSelect.value || examSelect.value === 'default') {
+          showToast('Please Select Examination First');
+          return;
+        }
+        if (!yearSelect.value || yearSelect.value === 'default') {
+          showToast('Please select the examination year');
+          return;
+        }
+        var inputVal = (examIndexNo.value || '').trim();
+        if (!inputVal) {
+          if (searchTypeSelect.value === 'nic') {
+            showToast('Please enter your NIC number');
+          } else {
+            showToast('Please enter your Index Number');
+          }
+          examIndexNo.focus();
+          return;
+        }
+        if (!isCaptchaVerified) {
+          showToast('Please complete the Captcha verification');
+          return;
+        }
+
+        // Show pulse loading animation
+        ballPulseOverlay.style.display = 'flex';
+
+        setTimeout(function() {
+          ballPulseOverlay.style.display = 'none';
+          renderResult(examSelect.value, yearSelect.value, inputVal);
+          resultContainer.style.display = 'block';
+          printBtn.disabled = false;
+
+          // Smooth scroll to result card
+          resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 600);
+      });
+
+      // Reset Handler
+      function resetFormToDefault() {
+        examSelect.value = 'default';
+        yearSelect.innerHTML = '<option disabled selected value="default">Select the year</option>';
+        yearSelect.disabled = true;
+        searchTypeSelect.value = 'index';
+        searchTypeSelect.disabled = true;
+        examIndexNo.value = '';
+        examIndexNo.placeholder = 'Search By ...';
+        examIndexNo.disabled = true;
+
+        // Reset Captcha
+        isCaptchaVerified = false;
+        isCaptchaPending = false;
+        hcaptchaCheckbox.innerHTML = '';
+        hcaptchaCheckbox.style.borderColor = '#c1c1c1';
+
+        // Hide result
+        resultContainer.style.display = 'none';
+        printBtn.disabled = true;
+      }
+
+      resetBtn.addEventListener('click', resetFormToDefault);
+
+      // Close Result Card
+      closeResultBtn.addEventListener('click', function() {
+        resultContainer.style.display = 'none';
+        printBtn.disabled = true;
+      });
+
+      // Print Handler - navigates to resultview matching official doenets behavior
+      printBtn.addEventListener('click', function() {
+        var inputVal = (examIndexNo.value || '').trim();
+        var examCode = examSelect.value;
+        var year = yearSelect.value;
+
+        var examNames = {
+          al: 'G.C.E.(A/L) EXAMINATION',
+          al_2026: 'G.C.E.(A/L) EXAMINATION',
+          ol: 'G.C.E. (O/L) EXAMINATION(After Rescrutiny)',
+          sc: 'Grade 5 Scholarship Examination-(After Appeals)'
+        };
+        var examTitle = examNames[examCode] || 'G.C.E.(A/L) EXAMINATION';
+
+        var isNicSearch = (searchTypeSelect.value === 'nic');
+        var indexNumberDisplay = '';
+        var nicNumberDisplay = '';
+
+        if (isNicSearch) {
+          nicNumberDisplay = inputVal;
+          indexNumberDisplay = (inputVal === '200609200996') ? '5813697' : ((inputVal === '567234891V' || inputVal === '567') ? '1000039' : '5813697');
+        } else {
+          indexNumberDisplay = inputVal;
+          nicNumberDisplay = (inputVal === '5813697') ? '200609200996' : ((inputVal === '1000039') ? '567234891V' : '200609200996');
+        }
+
+        var candidateName = (inputVal === '1000039' || inputVal === '567234891V' || inputVal === '567') ? 
+          'ANTHONIGE RUWANTHIKA SHAMINI ANURADHA FERNANDO' : 
+          'GANEHI ARACHCHILAGE MALINDU SATHSARA GANEHI ARACHCHI';
+
+        var subjects = (inputVal === '1000039' || inputVal === '567234891V' || inputVal === '567') ? [
+          { name: 'PHYSICS', res: 'S' },
+          { name: 'CHEMISTRY', res: 'C' },
+          { name: 'BIOLOGY', res: 'S' },
+          { name: 'COMMON GENERAL TEST', res: '057' },
+          { name: 'GENERAL ENGLISH', res: 'A' }
+        ] : [
+          { name: 'PHYSICS', res: 'S' },
+          { name: 'CHEMISTRY', res: 'F' },
+          { name: 'COMBINED MATHEMATICS', res: 'F' },
+          { name: 'COMMON GENERAL TEST', res: '046' },
+          { name: 'GENERAL ENGLISH', res: 'C' }
+        ];
+
+        var resultData = {
+          examination: examTitle,
+          year: year,
+          candidateName: candidateName,
+          indexNumber: indexNumberDisplay,
+          nicNumber: nicNumberDisplay,
+          districtRank: '-',
+          islandRank: '-',
+          zScore: '-',
+          subjectStream: 'PHYSICAL SCIENCE',
+          subjects: subjects
+        };
+
+        try {
+          sessionStorage.setItem('doenets_exam_result', JSON.stringify(resultData));
+          localStorage.setItem('doenets_exam_result', JSON.stringify(resultData));
+        } catch(e) {}
+
+        window.location.href = 'resultview/index.html';
+      });
+
+      // Result rendering matching user screenshot exactly
+      function renderResult(examCode, year, inputVal) {
+        var examNames = {
+          al: 'G.C.E.(A/L) EXAMINATION',
+          al_2026: 'G.C.E.(A/L) EXAMINATION',
+          ol: 'G.C.E. (O/L) EXAMINATION(After Rescrutiny)',
+          sc: 'Grade 5 Scholarship Examination-(After Appeals)'
+        };
+        var examTitle = examNames[examCode] || 'G.C.E.(A/L) EXAMINATION';
+        resExamTitle.textContent = examTitle;
+        resYearBadge.textContent = year;
+
+        var isNicSearch = (searchTypeSelect.value === 'nic');
+        var indexNumberDisplay = '';
+        var nicNumberDisplay = '';
+
+        if (isNicSearch) {
+          nicNumberDisplay = inputVal;
+          indexNumberDisplay = (inputVal === '200609200996') ? '5813697' : ((inputVal === '567234891V' || inputVal === '567') ? '1000039' : '5813697');
+        } else {
+          indexNumberDisplay = inputVal;
+          nicNumberDisplay = (inputVal === '5813697') ? '200609200996' : ((inputVal === '1000039') ? '567234891V' : '200609200996');
+        }
+
+        // Candidate details matching user screenshot
+        var candidateName = (inputVal === '1000039' || inputVal === '567234891V' || inputVal === '567') ? 
+          'ANTHONIGE RUWANTHIKA SHAMINI ANURADHA FERNANDO' : 
+          'GANEHI ARACHCHILAGE MALINDU SATHSARA GANEHI ARACHCHI';
+
+        var studentInfoHtml = '';
+        var subjectsHtml = '';
+
+        if (examCode === 'al' || examCode === 'al_2026') {
+          var isSpecialRuwanthika = (inputVal === '1000039' || inputVal === '567234891V' || inputVal === '567');
+          var zScore = isSpecialRuwanthika ? '.1605' : '-';
+          var distRank = isSpecialRuwanthika ? '2635' : '-';
+          var islRank = isSpecialRuwanthika ? '19350' : '-';
+          var stream = isSpecialRuwanthika ? 'BIOLOGICAL SCIENCE' : 'PHYSICAL SCIENCE';
+
+          var info = [
+            { param: 'Examination', val: examTitle },
+            { param: 'Year', val: year },
+            { param: 'Name', val: candidateName },
+            { param: 'Index Number', val: indexNumberDisplay },
+            { param: 'NIC Number', val: nicNumberDisplay },
+            { param: 'District Rank', val: distRank },
+            { param: 'Island Rank', val: islRank },
+            { param: 'Z-Score', val: zScore },
+            { param: 'Subject Stream', val: stream }
+          ];
+
+          info.forEach(function(item) {
+            studentInfoHtml += '<div class="row">' +
+              '<div class="col-md-4 col-sm-4 col-xs-4"><p><strong>' + item.param + '</strong></p></div>' +
+              '<div class="col-md-8 col-sm-8 col-xs-8"><p>' + item.val + '</p></div>' +
+            '</div>';
+          });
+
+          var subjects = isSpecialRuwanthika ? [
+            { name: 'PHYSICS', res: 'S' },
+            { name: 'CHEMISTRY', res: 'C' },
+            { name: 'BIOLOGY', res: 'S' },
+            { name: 'COMMON GENERAL TEST', res: '057' },
+            { name: 'GENERAL ENGLISH', res: 'A' }
+          ] : [
+            { name: 'PHYSICS', res: 'S' },
+            { name: 'CHEMISTRY', res: 'F' },
+            { name: 'COMBINED MATHEMATICS', res: 'F' },
+            { name: 'COMMON GENERAL TEST', res: '046' },
+            { name: 'GENERAL ENGLISH', res: 'C' }
+          ];
+
+          subjects.forEach(function(sub) {
+            subjectsHtml += '<div class="row">' +
+              '<div class="col-md-8 col-sm-8 col-xs-8">' +
+                '<p><i class="fas fa-chevron-right text-muted mr-1" style="font-size:0.75rem;"></i> &nbsp; ' + sub.name + '</p>' +
+              '</div>' +
+              '<div class="col-md-4 col-sm-4 col-xs-4 text-right pr-4">' +
+                '<p><span class="badge badge-default">' + sub.res + '</span></p>' +
+              '</div>' +
+            '</div>';
+          });
+
+          studentInfoBox.innerHTML = studentInfoHtml;
+          subjectResultsBox.innerHTML = subjectsHtml;
+
+        } else if (examCode === 'ol') {
+          var infoOl = [
+            { param: 'Examination', val: examTitle },
+            { param: 'Year', val: year },
+            { param: 'Name', val: candidateName },
+            { param: 'Index Number', val: indexNumberDisplay },
+            { param: 'NIC Number', val: nicNumberDisplay }
+          ];
+          infoOl.forEach(function(item) {
+            studentInfoHtml += '<div class="row">' +
+              '<div class="col-md-4 col-sm-4 col-xs-4"><p><strong>' + item.param + '</strong></p></div>' +
+              '<div class="col-md-8 col-sm-8 col-xs-8"><p>' + item.val + '</p></div>' +
+            '</div>';
+          });
+
+          var olSubjects = [
+            { name: 'RELIGION', res: 'A' },
+            { name: 'SINHALA LANGUAGE & LIT.', res: 'A' },
+            { name: 'ENGLISH LANGUAGE', res: 'A' },
+            { name: 'MATHEMATICS', res: 'A' },
+            { name: 'SCIENCE', res: 'A' },
+            { name: 'HISTORY', res: 'A' },
+            { name: 'BUSINESS & ACCT. STUDIES', res: 'A' },
+            { name: 'INFORMATION & COMM. TECH.', res: 'A' },
+            { name: 'ART', res: 'A' }
+          ];
+          olSubjects.forEach(function(sub) {
+            subjectsHtml += '<div class="row">' +
+              '<div class="col-md-8 col-sm-8 col-xs-8">' +
+                '<p><i class="fas fa-chevron-right text-muted mr-1" style="font-size:0.75rem;"></i> &nbsp; ' + sub.name + '</p>' +
+              '</div>' +
+              '<div class="col-md-4 col-sm-4 col-xs-4 text-right pr-4">' +
+                '<p><span class="badge badge-default">' + sub.res + '</span></p>' +
+              '</div>' +
+            '</div>';
+          });
+
+          studentInfoBox.innerHTML = studentInfoHtml;
+          subjectResultsBox.innerHTML = subjectsHtml;
+
+        } else {
+          // Scholarship
+          var infoSc = [
+            { param: 'Examination', val: examTitle },
+            { param: 'Year', val: year },
+            { param: 'Name', val: candidateName },
+            { param: 'Index Number', val: indexNumberDisplay },
+            { param: 'Marks', val: '178' },
+            { param: 'District Cut-off Mark', val: '154' },
+            { param: 'Status', val: 'ELIGIBLE' }
+          ];
+          infoSc.forEach(function(item) {
+            studentInfoHtml += '<div class="row">' +
+              '<div class="col-md-4 col-sm-4 col-xs-4"><p><strong>' + item.param + '</strong></p></div>' +
+              '<div class="col-md-8 col-sm-8 col-xs-8"><p>' + item.val + '</p></div>' +
+            '</div>';
+          });
+          studentInfoBox.innerHTML = studentInfoHtml;
+          subjectResultsBox.innerHTML = '<div class="text-center pt-4"><h4 class="text-success font-weight-bold">ELIGIBLE</h4><p class="text-muted">Qualified for School Admission & Bursary</p></div>';
+        }
+      }
+
+      // Language Switcher Visual Toggle
+      function setActiveLang(btn) {
+        [langSiBtn, langTaBtn, langEnBtn].forEach(function(b) {
+          b.className = 'nav-link';
+        });
+        btn.className = 'nav-link btn btn-xs btn-outline-primary text-primary text-left';
+      }
+
+      langSiBtn.addEventListener('click', function() { setActiveLang(langSiBtn); });
+      langTaBtn.addEventListener('click', function() { setActiveLang(langTaBtn); });
+      langEnBtn.addEventListener('click', function() { setActiveLang(langEnBtn); });
+
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <title>Exam Results - Department of Examinations - Sri Lanka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../doenets-lk-examresults-full-site-offline/www.doenets.lk/favicon.ico">
+
+  <!-- Main font -->
+  <link href="../doenets-lk-examresults-full-site-offline/fonts.googleapis.com/css/family=Roboto_300,300i,400,400i,500,500i,700,700i,900.css" rel="stylesheet">
+  <link rel="stylesheet" href="../doenets-lk-examresults-full-site-offline/www.doenets.lk/styles.85ae39be287006094234.css">
+
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #212529;
+      margin: 0;
+      padding: 0;
+    }
+    .header-logo-container {
+      text-align: center;
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .header-logo {
+      width: 290px;
+      max-width: 85%;
+      height: auto;
+      display: inline-block;
+    }
+    .exam-main-title {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #212529;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.25;
+      padding: 0 10px;
+    }
+    .info-container {
+      max-width: 820px;
+      margin: 0 auto 1.8rem auto;
+      padding: 0 16px;
+    }
+    .info-row {
+      display: flex;
+      margin-bottom: 0.35rem;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+    .info-label {
+      flex: 0 0 44%;
+      text-align: right;
+      padding-right: 18px;
+      font-weight: 500;
+      color: #495057;
+    }
+    .info-value {
+      flex: 0 0 56%;
+      text-align: left;
+      font-weight: 500;
+      color: #212529;
+      word-break: break-word;
+    }
+    .table-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #dee2e6;
+      margin-bottom: 2rem;
+    }
+    .results-table th {
+      width: 50%;
+      background-color: rgb(209, 207, 207) !important;
+      color: #212529;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 10px 8px;
+      border: 1px solid #c0bebe;
+    }
+    .results-table td {
+      width: 50%;
+      text-align: center;
+      padding: 10px 8px;
+      border: 1px solid #dee2e6;
+      font-size: 0.88rem;
+      color: #212529;
+    }
+    .results-table tbody tr:nth-of-type(odd) {
+      background-color: #ffffff;
+    }
+    .results-table tbody tr:nth-of-type(even) {
+      background-color: #fdfdfd;
+    }
+    .disclaimer-section {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+      padding: 0 15px;
+      color: #495057;
+    }
+    .disclaimer-section p {
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Floating Scroll To Top Button */
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      cursor: pointer;
+      display: none;
+      transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+    #scrollToTopBtn:hover {
+      transform: translateY(-3px);
+    }
+    #scrollToTopBtn img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 576px) {
+      .header-logo {
+        width: 250px;
+      }
+      .exam-main-title {
+        font-size: 1.35rem;
+        margin-top: 0.8rem;
+        margin-bottom: 1.4rem;
+        line-height: 1.3;
+      }
+      .info-container {
+        padding: 0 10px;
+        margin-bottom: 1.4rem;
+      }
+      .info-row {
+        font-size: 0.82rem;
+        margin-bottom: 0.3rem;
+      }
+      .info-label {
+        flex: 0 0 44%;
+        padding-right: 12px;
+      }
+      .info-value {
+        flex: 0 0 56%;
+      }
+      .table-container {
+        padding: 0 10px;
+      }
+      .results-table th, .results-table td {
+        font-size: 0.82rem;
+        padding: 8px 4px;
+      }
+    }
+
+    @media print {
+      #scrollToTopBtn {
+        display: none !important;
+      }
+      body {
+        background-color: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .results-table th {
+        background-color: rgb(209, 207, 207) !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Department Logo -->
+  <div class="header-logo-container">
+    <img src="department_logo.jpg" alt="Department of Examinations Logo" class="header-logo">
+  </div>
+
+  <!-- Examination Main Title -->
+  <div class="exam-main-title" id="examMainTitle">
+    G.C.E.(A/L) EXAMINATION - 2026
+  </div>
+
+  <!-- Candidate Information -->
+  <div class="info-container" id="candidateInfoContainer">
+    <!-- Rendered dynamically -->
+  </div>
+
+  <!-- Subject Results Table -->
+  <div class="table-container">
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody id="subjectResultsTableBody">
+        <!-- Rendered dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Disclaimer and Copyright -->
+  <div class="disclaimer-section">
+    <p>Please note that this online result is provisional and should not be used as an official confirmation or a certification.</p>
+    <p>Copyright © 2005-2022 - Department of Examinations - Sri Lanka</p>
+  </div>
+
+  <!-- Floating Scroll To Top Button -->
+  <div id="scrollToTopBtn">
+    <img src="../doenets-lk-examresults-full-site-offline/www.doenets.lk/assets/images/scroll_top.png" alt="Scroll to Top">
+  </div>
+
+  <script>
+    (function() {
+      var examMainTitle = document.getElementById('examMainTitle');
+      var candidateInfoContainer = document.getElementById('candidateInfoContainer');
+      var subjectResultsTableBody = document.getElementById('subjectResultsTableBody');
+      var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+      window.addEventListener('scroll', function() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollY > 120) {
+          scrollToTopBtn.style.display = 'block';
+        } else {
+          scrollToTopBtn.style.display = 'none';
+        }
+      });
+
+      scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      var savedResult = null;
+      try {
+        var raw = sessionStorage.getItem('doenets_exam_result') || localStorage.getItem('doenets_exam_result');
+        if (raw) savedResult = JSON.parse(raw);
+      } catch(e) {}
+
+      var result = savedResult || {
+        examination: 'G.C.E.(A/L) EXAMINATION',
+        year: '2026',
+        candidateName: 'GANEHI ARACHCHILAGE MALINDU SATHSARA GANEHI ARACHCHI',
+        indexNumber: '5813697',
+        nicNumber: '200609200996',
+        districtRank: '-',
+        islandRank: '-',
+        zScore: '-',
+        subjectStream: 'PHYSICAL SCIENCE',
+        subjects: [
+          { name: 'PHYSICS', res: 'S' },
+          { name: 'CHEMISTRY', res: 'F' },
+          { name: 'COMBINED MATHEMATICS', res: 'F' },
+          { name: 'COMMON GENERAL TEST', res: '046' },
+          { name: 'GENERAL ENGLISH', res: 'C' }
+        ]
+      };
+
+      examMainTitle.textContent = result.examination + ' - ' + result.year;
+
+      var infoItems = [
+        { label: 'Examination', val: result.examination },
+        { label: 'Year', val: result.year },
+        { label: 'Name', val: result.candidateName },
+        { label: 'Index Number', val: result.indexNumber },
+        { label: 'NIC Number', val: result.nicNumber },
+        { label: 'District Rank', val: result.districtRank },
+        { label: 'Island Rank', val: result.islandRank },
+        { label: 'Z-Score', val: result.zScore },
+        { label: 'Subject Stream', val: result.subjectStream }
+      ];
+
+      var infoHtml = '';
+      infoItems.forEach(function(item) {
+        infoHtml += '<div class="info-row">' +
+          '<div class="info-label">' + item.label + '</div>' +
+          '<div class="info-value">' + item.val + '</div>' +
+        '</div>';
+      });
+      candidateInfoContainer.innerHTML = infoHtml;
+
+      var tbodyHtml = '';
+      result.subjects.forEach(function(sub) {
+        tbodyHtml += '<tr>' +
+          '<td>' + sub.name + '</td>' +
+          '<td>' + sub.res + '</td>' +
+        '</tr>';
+      });
+      subjectResultsTableBody.innerHTML = tbodyHtml;
+    })();
+  </script>
+</body>
+</html>

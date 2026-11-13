@@ -1,0 +1,39 @@
+========================================================
+  Website Downloader — Download Report
+  https://websitedownloader.io
+========================================================
+
+Status:         Paused (page limit reached)
+Started at:     2026-11-13 03:49:31 UTC
+Paused at:      2026-11-13 03:50:24 UTC
+Download ID:    01M79GC5DVW7DCN7APKPFXCWVV
+
+--- Source ---
+URL:            https://www.doenets.lk/examresults
+
+--- Settings ---
+Mode:           Full site (auto)
+URL rewriting:  Relative (works offline)
+Max pages:      1
+Max depth:      1
+
+--- Results ---
+HTML pages:     1 of ~7 estimated
+Total files:    54
+Duration:       53s
+
+--- JavaScript Rendering ---
+Rendered pages: 1
+Static pages:   0
+
+========================================================
+  Download paused — upgrade, then resume for the rest
+--------------------------------------------------------
+  You hit the page limit for your current plan.
+  Resuming needs more pages than your plan allows, so upgrade
+  first — then hit Resume to continue from here:
+  https://websitedownloader.io/upgrade?downloadId=01M79GC5DVW7DCN7APKPFXCWVV
+
+  - Pro:       up to 200 pages per download, 1-hour timeout
+  - Unlimited: unlimited pages, unlimited depth, 24-hour timeout
+========================================================
